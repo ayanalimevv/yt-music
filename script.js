@@ -84,11 +84,11 @@ playlist.addEventListener("click", () => {
 });
 back.addEventListener('click',()=>{
   lyrics.click();
-  document.getElementsByClassName("lyrics-text")[0].querySelectorAll("p")[0].style.color="rgba(255,255,255,0.7)";
+  document.getElementsByClassName("lyrics-text")[0].querySelectorAll("p")[0].style.color="rgba(255,255,255,0.8)";
 
 })
 next.addEventListener('click',()=>{
-  document.getElementsByClassName("lyrics-text")[0].querySelectorAll("p")[0].style.color="rgba(255,255,255,0.7)";
+  document.getElementsByClassName("lyrics-text")[0].querySelectorAll("p")[0].style.color="rgba(255,255,255,0.8)";
 
   lyrics.click();
 })
