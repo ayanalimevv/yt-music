@@ -1,0 +1,216 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400&display=swap");
+$main-color: #030303;
+$text-color: white;
+$mid-color: rgba(255, 255, 255, 0.5);
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+body {
+  background: $main-color;
+  color: $text-color;
+  overflow-x: hidden;
+}
+nav {
+  display: flex;
+  z-index: 10;
+  background: $main-color;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  .acc-logo {
+    height: 1.5rem;
+    border-radius: 50%;
+  }
+}
+.main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 3.5rem 78.75px;
+  .main-info {
+    margin: 1rem;
+    img {
+      width: 100%;
+    }
+  }
+  .main-queue {
+    width: 100vw;
+    .main-queue-head {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      div {
+        width: 50%;
+        padding: 0.8rem 0;
+        text-align: center;
+        color: rgba($color: #fff, $alpha: 0.5);
+        h4 {
+          font-family: "Roboto";
+          font-weight: 500;
+        }
+      }
+    }
+    .lyrics-text {
+      padding: 2rem;
+      display: flex;
+      flex-direction: column;
+      p {
+        margin-bottom: 0.5rem;
+        color: $mid-color;
+        font-family: "Roboto";
+        font-weight: 300;
+      }
+      .last-para {
+        margin-bottom: 1rem;
+      }
+      button {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: #fff;
+        background-color: #ff0000;
+        border-color: #ff0000;
+        padding: 1rem;
+        width: 12rem;
+        height: 3rem;
+        a {
+          text-decoration: none;
+          color: white;
+          font-weight: 300;
+          font-family: "Roboto";
+        }
+      }
+    }
+    .main-queue-playlist {
+      width: 100%;
+      font-family: "Roboto";
+      overflow-x: scroll;
+      ul {
+        display: flex;
+        width: 100%;
+        list-style-type: none;
+        flex-direction: column;
+        li {
+          justify-content: space-around;
+          align-items: center;
+          width: 100%;
+          display: flex;
+          border-bottom: 1px solid $mid-color;
+          padding: 0.8rem;
+          img {
+            width: 10%;
+            float: left;
+          }
+          div {
+            display: flex;
+            justify-content: flex-start;
+            flex-direction: column;
+            width: 100%;
+            padding: 0 1rem;
+            h5 {
+              margin-bottom: 0.2rem;
+              font-size: 15px;
+              font-weight: 500;
+            }
+            p {
+              color: $mid-color;
+              font-size: 12px;
+            }
+          }
+          .time {
+            float: right;
+            color: $mid-color;
+          }
+        }
+      }
+    }
+  }
+}
+.active {
+  position: relative;
+  color: rgba($color: #fff, $alpha: 1) !important;
+}
+.active::after {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  content: "";
+  width: 100%;
+  height: 2px;
+  background: white;
+}
+.playback-bar {
+  width: 100vw;
+  font-family: "Roboto";
+  height: 4rem;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  z-index: 100;
+  background: #212121;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+  .controls {
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    
+
+    i {
+      margin: 8px;
+    }
+  }
+  .left-playback {
+    display: flex;
+    float: left;
+    justify-content: center;
+    align-items: center;
+    img {
+      width: 3rem;
+      height: 3rem;
+      margin: 0 1rem 0 0;
+    }
+    .playback-info {
+      display: flex;
+      flex-direction: column;
+      p {
+        font-size: 10px;
+        color: $mid-color;
+        margin: 0.1rem 0;
+      }
+    }
+  }
+}
+.active-song {
+  background: rgba($color: #fff, $alpha: 0.05);
+  border: 1px solid white !important;
+  transition: 500ms ease-in-out;
+}
+
+.d-none {
+  display: none !important;
+}
+.d-inline {
+  display: inline !important;
+}
+.d-flex {
+  display: flex !important;
+}
+.vol-up,
+.vol-down,
+.play,
+.pause {
+  cursor: pointer;
+}

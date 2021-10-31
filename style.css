@@ -1,0 +1,324 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400&display=swap");
+* {
+  padding: 0;
+  margin: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  background: #030303;
+  color: white;
+  overflow-x: hidden;
+}
+
+nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  z-index: 10;
+  background: #030303;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 1rem;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+}
+
+nav .acc-logo {
+  height: 1.5rem;
+  border-radius: 50%;
+}
+
+.main {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  padding: 3.5rem 78.75px;
+}
+
+.main .main-info {
+  margin: 1rem;
+}
+
+.main .main-info img {
+  width: 100%;
+}
+
+.main .main-queue {
+  width: 100vw;
+}
+
+.main .main-queue .main-queue-head {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.main .main-queue .main-queue-head div {
+  width: 50%;
+  padding: 0.8rem 0;
+  text-align: center;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.main .main-queue .main-queue-head div h4 {
+  font-family: "Roboto";
+  font-weight: 500;
+}
+
+.main .main-queue .lyrics-text {
+  padding: 2rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.main .main-queue .lyrics-text p {
+  margin-bottom: 0.5rem;
+  color: rgba(255, 255, 255, 0.5);
+  font-family: "Roboto";
+  font-weight: 300;
+}
+
+.main .main-queue .lyrics-text .last-para {
+  margin-bottom: 1rem;
+}
+
+.main .main-queue .lyrics-text button {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  color: #fff;
+  background-color: #ff0000;
+  border-color: #ff0000;
+  padding: 1rem;
+  width: 12rem;
+  height: 3rem;
+}
+
+.main .main-queue .lyrics-text button a {
+  text-decoration: none;
+  color: white;
+  font-weight: 300;
+  font-family: "Roboto";
+}
+
+.main .main-queue .main-queue-playlist {
+  width: 100%;
+  font-family: "Roboto";
+  overflow-x: scroll;
+}
+
+.main .main-queue .main-queue-playlist ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  list-style-type: none;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.main .main-queue .main-queue-playlist ul li {
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+  padding: 0.8rem;
+}
+
+.main .main-queue .main-queue-playlist ul li img {
+  width: 10%;
+  float: left;
+}
+
+.main .main-queue .main-queue-playlist ul li div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 100%;
+  padding: 0 1rem;
+}
+
+.main .main-queue .main-queue-playlist ul li div h5 {
+  margin-bottom: 0.2rem;
+  font-size: 15px;
+  font-weight: 500;
+}
+
+.main .main-queue .main-queue-playlist ul li div p {
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 12px;
+}
+
+.main .main-queue .main-queue-playlist ul li .time {
+  float: right;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.active {
+  position: relative;
+  color: white !important;
+}
+
+.active::after {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  content: "";
+  width: 100%;
+  height: 2px;
+  background: white;
+}
+
+.playback-bar {
+  width: 100vw;
+  font-family: "Roboto";
+  height: 4rem;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  z-index: 100;
+  background: #212121;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 1rem;
+}
+
+.playback-bar .controls {
+  margin: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  height: 100%;
+}
+
+.playback-bar .controls i {
+  margin: 8px;
+}
+
+.playback-bar .left-playback {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  float: left;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.playback-bar .left-playback img {
+  width: 3rem;
+  height: 3rem;
+  margin: 0 1rem 0 0;
+}
+
+.playback-bar .left-playback .playback-info {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.playback-bar .left-playback .playback-info p {
+  font-size: 10px;
+  color: rgba(255, 255, 255, 0.5);
+  margin: 0.1rem 0;
+}
+
+.active-song {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid white !important;
+  -webkit-transition: 500ms ease-in-out;
+  transition: 500ms ease-in-out;
+}
+
+.d-none {
+  display: none !important;
+}
+
+.d-inline {
+  display: inline !important;
+}
+
+.d-flex {
+  display: -webkit-box !important;
+  display: -ms-flexbox !important;
+  display: flex !important;
+}
+
+.vol-up,
+.vol-down,
+.play,
+.pause {
+  cursor: pointer;
+}
+/*# sourceMappingURL=style.css.map */
