@@ -16,8 +16,11 @@ let pause = document.getElementsByClassName("pause")[0];
 let back = document.getElementsByClassName("back")[0];
 let next = document.getElementsByClassName("next")[0];
 var activesong;
-
-//Song Index
+let time=document.querySelectorAll("time");
+let slider=document.getElementsByTagName("input")[0];
+let playbackBar=document.getElementsByClassName("playback-bar")[0];
+slider.value=0;
+var sliderprogress;
 let songId= ["a","b","c","d","e","f","g"]
 let index = songId[0]
 
@@ -29,6 +32,7 @@ li.forEach(function myPlayer(element){
         e.classList.remove("active-song");
       }
     });
+    playbackBar.classList.remove("op-none");
     play.classList.add("d-none");
     pause.classList.add("d-inline");
     index=element.id;
@@ -37,6 +41,11 @@ li.forEach(function myPlayer(element){
     }
     a=new Audio(index+'.mp3');
     a.play();
+    sliderprogress=setInterval(()=>{
+      var currtime=Math.floor(a.currentTime);
+      var percentageComplete=""+(Math.floor((currtime/(a.duration))*100));
+      slider.value=(percentageComplete);
+    },1000);
     element.classList.toggle("active-song");
     activesong=document.getElementsByClassName("active-song")[0];
     activeEl = activesong.getElementsByTagName("img")[0].src;
@@ -48,10 +57,9 @@ li.forEach(function myPlayer(element){
     let playbackartist=document.getElementsByClassName("playback-artist")[0];
     playbackheading.innerText=heading;
     playbackartist.innerText=artist;
-    
+    play.click();
   });
 });
-
 volUp.addEventListener("click", () => {
   a.volume=0;
   volUp.classList.add("d-none");
@@ -89,9 +97,12 @@ playlist.addEventListener("click", () => {
   playlistDiv.classList.add("d-flex");
   playlistDiv.classList.remove("d-none");
 });
-
-
-///Playing the Next Song
+slider.addEventListener('input',()=>{
+  console.log(10)
+  let songtime=(((a.duration)*(slider.value)) / 100);
+  a.currentTime=songtime;
+  sliderprogress;
+})
 let playNext= ()=> {
   let id = songId.indexOf(index)
   id==6 ? id=0 :id++
@@ -109,7 +120,6 @@ let playPrevious = ()=> {
 next.addEventListener('click',()=>{
   playNext()
 })
-
 back.addEventListener('click',()=>{
   playPrevious()
 })

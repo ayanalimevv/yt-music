@@ -32,10 +32,10 @@
                 </div>
             </div>
             <div class="lyrics-text d-none">
-                <p>Lyrics Section, Back and Forward Button Coming Soon....</p>
+                <p style="color:rgba(255,255,255,0.8);">Lyrics Section Coming Soon....</p>
                 <p>Keep supporting and we will add much more features in this app.</p>
                 <p class="last-para">Please if u like this project give it a star on github.</p>
-                <button><a href="#">Star this project on github.</a></button>
+                <button><a href="https://github.com/alpha2207/yt-music-clone">Star this project on github.</a></button>
 
             </div>
             
@@ -47,7 +47,7 @@
                             <h5>STAY</h5>
                             <p>Justin Bieber & The Kid Laroi</p>
                         </div>
-                        <p class="time">3:13</p>
+                        <p class="time">2:37</p>
                     </li>
                     <li id="b">
                         <img src="./music/safari.jpg" alt="">
@@ -55,7 +55,7 @@
                             <h5>Safari</h5>
                             <p>Serena</p>
                         </div>
-                        <p class="time">3:13</p>
+                        <p class="time">3:09</p>
                     </li>
                     <li id="c">
                         <img src="./music/Justin_Bieber_-_Peaches.png" alt="">
@@ -63,7 +63,7 @@
                             <h5>Peaches</h5>
                             <p>Justin Bieber</p>
                         </div>
-                        <p class="time">3:13</p>
+                        <p class="time">3:17</p>
                     </li>
                     <li id="d">
                         <img src="cradles.jpg" alt="">
@@ -71,7 +71,7 @@
                             <h5>Cradles</h5>
                             <p>Sub Urban</p>
                         </div>
-                        <p class="time">3:13</p>
+                        <p class="time">3:30</p>
                     </li>
                     <li id="e">
                         <img src="./music/2bolna.jpg" alt="">
@@ -79,7 +79,7 @@
                             <h5>Bol Na Halke Halke</h5>
                             <p>Rahat Fateh Ali Khan</p>
                         </div>
-                        <p class="time">3:13</p>
+                        <p class="time">5:06</p>
                     </li>
                     <li id="f">
                         <img src="./music/meinjo.jpg" alt="">
@@ -87,7 +87,7 @@
                             <h5>Mein Jo Dhundhne Ko</h5>
                             <p>Arijit Singh</p>
                         </div>
-                        <p class="time">3:13</p>
+                        <p class="time">4:23</p>
                     </li>
                     <li id="g">
                         <img src="./music/levitating.jpg" alt="">
@@ -95,14 +95,15 @@
                             <h5>Levitating</h5>
                             <p>Dua Lipa</p>
                         </div>
-                        <p class="time">3:13</p>
+                        <p class="time">3:23</p>
                     </li>
                 </ul>
 
             </div>
         </div>
     </div>
-    <div class="playback-bar">
+    <div class="op-none playback-bar">
+        <input type="range" min="0" value="0" max="100">
         <div class="left-playback">
             <img src="1.jpg" alt="">
             <div class="playback-info">
@@ -115,8 +116,11 @@
             <i class="pause d-none fas fa-pause"></i>
             <i class="next fas fa-step-forward"></i>
         </div>
-        <i class="vol-up fas fa-volume-up"></i>
+        <div class="volume">
+            <i class="vol-up fas fa-volume-up"></i>
         <i class="vol-down d-none fas fa-volume-mute"></i>
+        </div>
+        
     </div>
     <script src="script.js"></script>
 </body>
