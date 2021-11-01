@@ -57,7 +57,18 @@ li.forEach(function myPlayer(element){
     let playbackartist=document.getElementsByClassName("playback-artist")[0];
     playbackheading.innerText=heading;
     playbackartist.innerText=artist;
+
+
+    a.onloadedmetadata = () =>  {
+      let duration = a.duration/60
+      duration = duration.toFixed(2)
+      duration = duration.toString()
+      duration = duration.replace('.',':')
+      element.getElementsByClassName('time')[0].innerText = duration
+    }
+   
     play.click();
+
   });
 });
 volUp.addEventListener("click", () => {
