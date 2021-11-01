@@ -16,8 +16,13 @@ let pause = document.getElementsByClassName("pause")[0];
 let back = document.getElementsByClassName("back")[0];
 let next = document.getElementsByClassName("next")[0];
 var activesong;
-var a=new Audio('a.mp3');;
-li.forEach((element) => {
+
+//Song Index
+let songId= ["a","b","c","d","e","f","g"]
+let index = songId[0]
+
+var a=new Audio(index+'.mp3');;
+li.forEach(function myPlayer(element){
   element.addEventListener("click", () => {
     li.forEach((e) => {
       if (e.classList.contains("active-song")) {
@@ -26,7 +31,7 @@ li.forEach((element) => {
     });
     play.classList.add("d-none");
     pause.classList.add("d-inline");
-    let index=element.id;
+    index=element.id;
     if (!a.paused) {
       a.pause();
     }
@@ -43,8 +48,10 @@ li.forEach((element) => {
     let playbackartist=document.getElementsByClassName("playback-artist")[0];
     playbackheading.innerText=heading;
     playbackartist.innerText=artist;
+    
   });
 });
+
 volUp.addEventListener("click", () => {
   a.volume=0;
   volUp.classList.add("d-none");
@@ -82,13 +89,27 @@ playlist.addEventListener("click", () => {
   playlistDiv.classList.add("d-flex");
   playlistDiv.classList.remove("d-none");
 });
-back.addEventListener('click',()=>{
-  lyrics.click();
-  document.getElementsByClassName("lyrics-text")[0].querySelectorAll("p")[0].style.color="rgba(255,255,255,0.8)";
 
-})
+
+///Playing the Next Song
+let playNext= ()=> {
+  let id = songId.indexOf(index)
+  id==6 ? id=0 :id++
+  let nextSong = songId[id]
+  document.getElementById(nextSong).click()
+}
+///Get Back To Previous Song
+let playPrevious = ()=> {
+  let id = songId.indexOf(index)
+  id==0 ? id=6 : id--
+  let nextSong = songId[id]
+  document.getElementById(nextSong).click()
+}
+
 next.addEventListener('click',()=>{
-  document.getElementsByClassName("lyrics-text")[0].querySelectorAll("p")[0].style.color="rgba(255,255,255,0.8)";
+  playNext()
+})
 
-  lyrics.click();
+back.addEventListener('click',()=>{
+  playPrevious()
 })
