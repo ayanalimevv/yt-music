@@ -48,6 +48,15 @@ li.forEach(function myPlayer(element){
     let playbackartist=document.getElementsByClassName("playback-artist")[0];
     playbackheading.innerText=heading;
     playbackartist.innerText=artist;
+
+    a.onloadedmetadata = () =>  {
+      let duration = a.duration/60
+      duration = duration.toFixed(2)
+      let time = duration.toString()
+      time = time.replace('.',':')
+      element.getElementsByClassName('time')[0].innerText = time
+    }
+   
     
   });
 });
