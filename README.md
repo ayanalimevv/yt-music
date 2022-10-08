@@ -1,2 +1,5 @@
-# yt-music-clone
-Hey, I created a youtube music web app clone using Html,CSS and Javascript. It is a first version of app which has 7 songs and got all features like play ,pause ,song change. Thanks for your support.
+#TITLE
+Youtube Music clone
+
+#DESCRIPTION 
+Do you use Youtube music by Google? Look at this clone of Youtube music which I've created using HTML, CSS and JavaScript. All the options are same as already running features of YT music.
